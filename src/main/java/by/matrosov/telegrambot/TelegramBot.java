@@ -26,7 +26,7 @@ public class TelegramBot extends TelegramLongPollingBot{
 
             try {
                 String result = "";
-                JsonObject jsonObject = new Gson().fromJson(readStringFromUrl("http://api.giphy.com/v1/gifs/search?q=" + a + "&api_key=API_KEY&limit=5"), JsonObject.class);
+                JsonObject jsonObject = new Gson().fromJson(readStringFromUrl("http://api.giphy.com/v1/gifs/search?q=" + a + "&api_key=&limit=25&lang=ru"), JsonObject.class);
                 String gif = jsonObject.getAsJsonArray("data").get(0).getAsJsonObject().get("url").toString();
                 result += gif;
 
